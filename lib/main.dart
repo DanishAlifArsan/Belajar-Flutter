@@ -6,15 +6,26 @@ void main() {
       appBar: AppBar(
         title: Text("MyApp"),
         centerTitle: true,
+        backgroundColor: Colors.deepPurple[100],
       ),
       body: Center(
-        child: Text("Hello World"),
+        child: Text(
+          "Hello World",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2,
+            color: Colors.black,
+            fontFamily: 'Montserrat',
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text("Button"),
+        backgroundColor: Colors.deepPurple[100],
         onPressed: () => {
 
         },
+        child: Text("Button"),
       ),
     ),
   ));
