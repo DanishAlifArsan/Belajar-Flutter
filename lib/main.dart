@@ -1,4 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
+
+final log = Logger('My App');
 
 void main() {
   runApp(MaterialApp(
@@ -18,7 +23,16 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.deepPurple[100],
       ),
       body: Center(
-        child: Image.network("https://images.unsplash.com/photo-1762770663487-6c03bb94fe84?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&q=60&w=600")
+        child: ElevatedButton.icon(
+            onPressed: () {
+              log.info("Button pressed");
+            },
+            icon: Icon(Icons.mail),
+            label: Text("Mail Me"),
+            style: ButtonStyle(
+              backgroundColor: WidgetStatePropertyAll(Colors.lightBlue),
+            ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepPurple[100],
