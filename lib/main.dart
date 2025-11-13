@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
+import 'quote.dart';
+import 'quoteWidget.dart';
 
 final log = Logger('My App');
 
@@ -19,10 +21,10 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
-  List<String> quoteList = [
-    "Hello World",
-    "Hello Flutter",
-    "This is my App",
+  List<Quote> quoteList = [
+    Quote(author: 'Oscar Wilde', text: 'Be yourself; everyone else is already taken'),
+    Quote(author: 'Oscar Wilde', text: 'I have nothing to declare except my genius'),
+    Quote(author: 'Oscar Wilde', text: 'The truth is rarely pure and never simple')
   ];
 
   @override
@@ -36,11 +38,13 @@ class _QuoteListState extends State<QuoteList> {
         elevation: 0,
       ),
       body: Column(
-        children: quoteList.map((quote) => Text(quote)).toList(),
+        children: quoteList.map((quote) => QuoteWidget(quote: quote)).toList(),
       ),
     );
   }
 }
+
+
 
 // class Home extends StatefulWidget {
 //   const Home({super.key});
