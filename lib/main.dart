@@ -38,7 +38,14 @@ class _QuoteListState extends State<QuoteList> {
         elevation: 0,
       ),
       body: Column(
-        children: quoteList.map((quote) => QuoteWidget(quote: quote)).toList(),
+        children: quoteList.map((quote) => QuoteWidget(
+            quote: quote,
+            delete: () {
+              setState(() {
+                quoteList.remove(quote);
+              });
+            }
+        )).toList(),
       ),
     );
   }
