@@ -7,6 +7,7 @@ class WorldTime {
   String? time;
   String? flag; // url to flag icon
   String? url; // location url for api endpoint
+  bool? isDayTime; // is day time or not
 
   WorldTime({this.location, this.flag, this.url});
 
@@ -26,6 +27,8 @@ class WorldTime {
 
       // set time property
       time = DateFormat.jm().format(now);
+
+      isDayTime = now.hour > 6 && now.hour < 18;
     }
     catch(e) {
       print("Error : $e");
